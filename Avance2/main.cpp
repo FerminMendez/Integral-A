@@ -1,6 +1,6 @@
 #include <iostream>
 #include "card.h"
-#include "deck.h"
+#include "fulldeck.h"
 #include <sstream>
 #include <vector>
 #include <cstring>
@@ -23,8 +23,11 @@ int main() {
   std::cout<<deck.print();*/
   
   //Para este crearemos un stack a partir de las cartas
-   Deck deck;
+
+   Fulldeck deck;
    Card card1("Nueva carta",8);
-  Stack<Card> myStack(deck.getDeck());
-  cout>>myStack.toString();
+
+  Stack playdeck(deck.getdeck());
+  std::cout<<playdeck.toString();
+
   }

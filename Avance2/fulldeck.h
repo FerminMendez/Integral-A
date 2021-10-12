@@ -1,5 +1,5 @@
-#ifndef DECK
-#define DECK
+#ifndef FULLDECK
+#define FULLDECK
 
 #include <string>
 #include <iostream>
@@ -13,19 +13,19 @@
 
 
 
-class Deck{
+class Fulldeck{
   private:
   void swap(int,int);
   std::vector<Card*> cards;
   public:
-  Deck();
+  Fulldeck();
   std::string print();
   void sort();
   void sort2();
-  std::vector<Card*> getDeck();
+  std::vector<Card*> getdeck();
 };
 
-Deck::Deck(){
+Fulldeck::Fulldeck(){
   std::vector <std::string> vec;//Vector
   std::string line;
   std::ifstream myfile ("CardsData.csv");
@@ -59,7 +59,7 @@ Deck::Deck(){
   }
 }
 
-  std::string Deck::print(){
+  std::string Fulldeck::print(){
     std::vector<Card*>::iterator i;
     std::string x;
     std::string msg="";
@@ -72,12 +72,12 @@ Deck::Deck(){
     return msg;
   }
 
-  void Deck::swap(int i, int j) {
+  void Fulldeck::swap(int i, int j) {
     Card* aux = cards[i];
     cards[i] = cards[j];
     cards[j] = aux;
   }
-  void Deck::sort(){
+  void Fulldeck::sort(){
     for (int i=0;i<cards.size();i++){
     int j=i;
       while (j>0 && cards[j]->getCost()<cards[j-1]->getCost()){
@@ -87,7 +87,7 @@ Deck::Deck(){
     }
   }
 
-   void Deck::sort2(){
+   void Fulldeck::sort2(){
     for (int i=0;i<cards.size();i++){
     int j=i;
       while (j>0 && cards[j]->getName()<cards[j-1]->getName()){
@@ -97,7 +97,7 @@ Deck::Deck(){
     }
   }
 
-   std::vector<Card*> Deck::getDeck(){
+   std::vector<Card*> Fulldeck::getdeck(){
      return cards;
    }
 
