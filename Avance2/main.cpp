@@ -27,7 +27,7 @@ int main() {
    Fulldeck deck;
    Card card1("Nueva carta",8);
 
-  Stack playdeck(deck.getdeck());
+  Stack<Card> playdeck(deck.getdeck());
   std::cout<<playdeck.toString();
 
   }
