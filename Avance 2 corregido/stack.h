@@ -7,7 +7,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
+#include "card.h"
 using namespace std;
 
 template <class T> class Stack;
@@ -48,14 +48,15 @@ class Stack {
 public:
 
     Stack();
-    Stack(vector<T*>);
+    Stack(vector<T*>&);
 	~Stack();
 
 	string toString() const;
 
 	void add(T);
 	T pop();
-
+	//Nueva
+	string vaciar();
 private:
 
     Link<T> *head;
@@ -69,12 +70,14 @@ template <class T>
 Stack<T>::Stack() : head(0), size(0) {}
 
 template <class T>
-Stack<T>::Stack(vector<T*> source){
-  size=source.size();
-  for (int i = 0; i < size; i++) {
-    T value=*source[i];
-    add(value);
+Stack<T>::Stack(vector<T*> &source){
+	head=0;
+  size=0;
+  for (int i = 0; i < source.size(); i++){
+	  T val=*source[i];
+    add(val);
     }	
+	
 }
 
 
@@ -117,6 +120,7 @@ void Stack<T>::add(T val){
 	head=p;
 	size++;
 }
+
 template <class T>
 T Stack<T>::pop(){
 	Link<T>* p=head;
@@ -125,4 +129,15 @@ T Stack<T>::pop(){
 	return p->value;
 }
 
+template<class T>
+string Stack<T>::vaciar(){
+	if (size<=0){
+		return "Este stack no tiene elementos";
+	}
+	string s="Vaciar stack \n";
+	while(size>0){
+		s=s+pop().print();
+	}
+	return s;
+}
 #endif

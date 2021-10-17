@@ -8,6 +8,7 @@
 #include <vector>
 #include <cstring>
 
+
 class Card{
   private:
   std::string name;
