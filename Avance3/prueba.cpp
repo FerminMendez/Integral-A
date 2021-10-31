@@ -8,11 +8,12 @@
 #include "stack.h"
 #include "card.h"
 #include "manage.h"
-
+#include "bst.h"
 using namespace std;
 
 int main() {
   Manage m;
+  
    cout<<"Original sorted. (ID) \n";
     vector<Card*> cards=m.getCards();
     cout<<m.printCards(cards);
@@ -38,8 +39,14 @@ int main() {
   cout<<"Example of a Stack created by the vector\n";
     Stack<Card> vstack(cards);
     cout<<vstack.vaciar();
-  
 
-
-
+  cout<<"Example of a Stack created by the BST\n";
+   BST<Card> tree(cards);
+   cout<<tree.print();
+    cards=tree.getCards();
+    m.save(cards);
+    cards=m.getCards();
+    cout<<m.printCards(cards);
+    m.shuffle(cards);
+    m.save(cards);
   }

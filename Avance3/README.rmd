@@ -1,0 +1,79 @@
+# Acceso y almacenamiento de cartas para el juego de mesa King Of Tokyo
+
+Este programa es la implentación del acceso y manejo de la información de las Power Cards del juego.
+Para eso tenemos una clase llamada cards que almacena los datos de la carta.
+Se compara el uso de las estructuras y las ventajas de cada uno.
+
+Incluí una clase llamada Manage para facilitar los procesos de lectura, escritura y orden de las cartas.
+
+## SICT0302B: Toma decisiones 
+
+### Selecciona y usa una estructura lineal adecuada al problema
+
+Uso un stack para crear el mazo de cartas donde solo nos importa ir sacando el elemento de más arriba como si fuera el juego real.
+
+//INCLUIR DONDE SE PONE EL STACK
+
+
+### Selecciona un algoritmo de ordenamiento adecuado al problema
+
+Considerando que el mazo consta de 66 cartas podemos decidir que se trata de un arreglo pequeño, por lo que el tiempo de ejecución no será una gran diferencia entre un algoritmo y otro. 
+Por esta razón opté por implementar algo que no ocupe mucha memoria y sea fácil de implementar. Un insertion sort.
+
+//INCLUIR DONDE SE PONE EL STACK
+
+### Usa un árbol adecuado para resolver un problema
+
+Usé un BST para ordenar las cartas registradas por ID. Como vamos a desordenar las cartas, es poco probable que se el BST se deforme. 
+
+//INCLUIR DONDE SE PONE BST
+
+Las funciones donde lo uso es en obten medicina por gramaje  y  medicinas con mismo gramaje que se encuentran en reportes.h en 
+las líneas 100 y 130
+
+## SICT0301B: Evalúa los componentes
+
+### Presenta Casos de Prueba correctos y completos para todas las funciones y procedimientos del programa,
+
+los casos de pruebas para todas las funciones se encuentran PruebasDeLasFunciones.cpp donde se prueban las funciones de: 
+
+Lectura, escritura, desorden y ordenamiento desde la clase Manage
+
+Implementación de funciones básicas del Stack
+
+Implementación de un BST por ID de cartas.
+
+
+### Hace un análisis de complejidad correcto y completo para todo el programa y sus compenetes,
+
+#### Funciones del Manage
+
+función de acceso por valor: O(n) por que para llegar a la medicina tengor que recorrer la listay comparar cada valor.
+
+funcion de inserción: O(1) siempre uso insert first.
+
+función de borrado: O(n/2 + b) porque para borrarla tengo que buscar la posición y uso head o tail y ya que la encuentro me toma b pasos constantes borrarla 
+
+#### Stack
+
+ordenamiento con merge sort: ...
+
+#### BST
+
+crear árbol de gramaje: ...
+
+agregar nodo a árbol gramaje: ...
+
+econtrar nodo en árbol gramaje: ...
+
+## SICT0303B: Implementa acciones científicas 
+
+### Implementa mecanismos para consultar información de las estructuras correctos y útiles dentro de un programa.
+
+El programa permite añadir cartas
+El programa permite ver el orden de las cartas, ordenarlas y desordenarlas
+El programa permite obtener medidas de gramaje del árbol (opción 5 en el menú)
+
+### Implementa mecanismos de lectura de archivos correctos y útiles dentro de un programa. Usar de manera
+Las cartas estan registradas en un csv, desde la clase manage se puede leer y obtener como un vector que podemos utilizar para llamar el stack y BST por separado para poder compararlos.
+Tambien tiene una opción save, que sobre escribe el archivo csv. Tambien se anexa un csv con los valores originale y ordenados por ID.
