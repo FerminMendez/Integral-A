@@ -11,6 +11,8 @@
 #include "bst.h"
 using namespace std;
 
+
+
 int main() {
   Manage m;
   
@@ -45,6 +47,12 @@ int main() {
    BST<Card> tree(cards);
    cout<<tree.print();
     cards=tree.getCards();
+    Card prueba(30,"Nueva carta",5,"Keep","Descripcion prueba");
+    tree.add(prueba);
+    cout<<tree.print();
+    tree.remove(prueba);
+    cout<<tree.print();
+    
     m.save(cards);
 
   }
