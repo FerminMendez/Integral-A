@@ -28,9 +28,6 @@ Usé un BST para ordenar las cartas registradas por ID. Como vamos a desordenar 
 
 //INCLUIR DONDE SE PONE BST
 
-Las funciones donde lo uso es en obten medicina por gramaje  y  medicinas con mismo gramaje que se encuentran en reportes.h en 
-las líneas 100 y 130
-
 ## SICT0301B: Evalúa los componentes
 
 ### Presenta Casos de Prueba correctos y completos para todas las funciones y procedimientos del programa,
@@ -72,28 +69,6 @@ Este BST está implementado por ordenamiento de menor a mayo respecto a los ID y
 Para imprimir el arbol en cualquiera de los casos tenemos una complejidad de O(n) ya que hay que pasar por todos los nodos
 -Add:Añade una carta al arbol. Complejidad O(logn) en la mayoria de los casos. Puede ser O(n) si está degenerado como linked list.
 
-
-
-
-#### Funciones del Manage
-
-función de acceso por valor: O(n) por que para llegar a la medicina tengor que recorrer la listay comparar cada valor.
-
-funcion de inserción: O(1) siempre uso insert first.
-
-función de borrado: O(n/2 + b) porque para borrarla tengo que buscar la posición y uso head o tail y ya que la encuentro me toma b pasos constantes borrarla 
-
-#### Stack
-
-ordenamiento con merge sort: ...
-
-#### BST
-
-crear árbol de gramaje: ...
-
-agregar nodo a árbol gramaje: ...
-
-econtrar nodo en árbol gramaje: ...
 
 ## SICT0303B: Implementa acciones científicas 
 

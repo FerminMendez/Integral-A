@@ -160,6 +160,13 @@ int main(int argc, char* argv[]) {
   cout << "\n" <<"26.- esperada " << ans << "\n programa " << tree.print() << "\n";
   cout <<	(!ans.compare(tree.print()) ? "success\n" : "fail\n");
 
+  tree.remove(carta1);
+  tree.remove(*cards[18]);
+  ans="[\n1-Alpha Monster with cost 5\n2-Frenezy with cost 7\n3-Apartament building with cost 5\n4-Nova Breath with cost 7\n5-Rooting for the underdog with cost 3\n7-Corner store with cost 3\n8-Friend of childre with cost 3\n9-Extra head with cost 7\n10-Background dweller with cost 4\n16-Gourmet with cost 4]";
+  cout << "\n" <<"26.- esperada " << ans << "\n programa " << tree.print() << "\n";
+  cout <<	(!ans.compare(tree.print()) ? "success\n" : "fail\n");
+
+
   cout<<"Para comprobar las funciones shuffle y save, las correremos juntas al final y esto resultará en un cambio de orden en todas las cartas que se reflejará en el csv cada vez que se corran estos casos de prueba \n";
   m.shuffle(cards);
   m.save(cards);

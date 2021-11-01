@@ -15,7 +15,7 @@ class Node{
         T value;
         Node<T>* left;
         Node<T>* right;
-
+        Node<T>* succesor();
     //
     public:
         //Node constructors
@@ -24,6 +24,7 @@ class Node{
         //Methods
         void add(T);
         bool find(T);
+        void remove(T);
         void removeChilds();
         //orders
         void preorder(std::stringstream&) const;
@@ -81,6 +82,43 @@ bool Node<T>::find(T val){
         return left->find(val);
     }
     return false;
+}
+
+template <class T>
+void Node<T>::remove(T val) {
+	Node<T> * succ, *old;
+
+	if (val < value) {
+		if (left != 0) {
+			if (left->value == val) {
+				old = left;
+				succ = left->succesor();
+				if (succ != 0) {
+					succ->left = old->left;
+					succ->right = old->right;
+				}
+				left = succ;
+				delete old;
+			} else {
+				left->remove(val);
+			}
+		}
+	} else if (val > value) {
+		if (right != 0) {
+			if (right->value == val) {
+				old = right;
+				succ = right->succesor();
+				if (succ != 0) {
+					succ->left = old->left;
+					succ->right = old->right;
+				}
+				right = succ;
+				delete old;
+			} else {
+				right->remove(val);
+			}
+		}
+	}
 }
 
 template <class T>
@@ -168,6 +206,39 @@ template <class T>
         right->getCards(aux);
     }
  }
+
+ template <class T>
+Node<T>* Node<T>::succesor() {
+	Node<T> *le, *ri;
+
+	le = left;
+	ri = right;
+
+	if (left == 0) {
+		if (right != 0) {
+			right = 0;
+		}
+		return ri;
+	}
+
+	if (left->right == 0) {
+		left = left->left;
+		le->left = 0;
+		return le;
+	}
+
+	Node<T> *parent, *child;
+	parent = left;
+	child = left->right;
+	while (child->right != 0) {
+		parent = child;
+		child = child->right;
+	}
+	parent->right = child->left;
+	child->left = 0;
+	return child;
+}
+
  
 //BST implementation
 template<class T> 
@@ -184,7 +255,9 @@ class BST{
         bool is_empty();
         void add(T);
         bool find(T);
+        void remove(T);
         void clearAll();
+        
         //Tarea
         std::string visit();
         std::string print();
@@ -247,6 +320,23 @@ bool BST<T>::find(T val){
         return root->find(val);
     }
     return false;
+}
+
+template <class T>
+void BST<T>::remove(T val) {
+	if (root != 0) {
+		if (val == root->value) {
+			Node<T> *succ = root->succesor();
+			if (succ != 0) {
+				succ->left = root->left;
+				succ->right = root->right;
+			}
+			delete root;
+			root = succ;
+		} else {
+			root->remove(val);
+		}
+	}
 }
 
 template <class T>
