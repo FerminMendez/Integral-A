@@ -134,7 +134,7 @@ string Stack<T>::vaciar(){
 	if (size<=0){
 		return "Este stack no tiene elementos";
 	}
-	string s="Vaciar stack \n";
+	string s="";
 	while(size>0){
 		s=s+pop().print();
 	}

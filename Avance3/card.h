@@ -30,7 +30,7 @@ class Card{
   int getCost();          //Get cost
   std::string getType();  //Get type
   std::string getDescription();  //Get description
-  std::string showVal()const;     //String to show in the prints
+  std::string showVal()const;     //String mostrada en el print del BST
   //Mehtods
   std::string print();    //Print the card
 
@@ -61,7 +61,7 @@ std::string Card::getDescription(){return des;}
 
 //Methods
 
-//Print
+//Prints
 std::string Card::showVal()const{
   return std::to_string(id)+"-"+name+" with cost "+std::to_string(cost);
 }
@@ -72,7 +72,5 @@ std::string Card::print(){
   std::string result = sstm.str();
   return result;
 }
-
-
 
 #endif

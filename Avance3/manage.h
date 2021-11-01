@@ -31,6 +31,7 @@ class Manage{
   void shuffle(std::vector<Card*> &);
   void sortByCost(std::vector<Card*> &);
   void sortByName(std::vector<Card*> &);
+  void sortById(std::vector<Card*> &);
   void save(std::vector<Card*> &);
 };
 
@@ -84,8 +85,8 @@ std::string Manage::printCards(std::vector<Card*> &cards){
     for(i = cards.begin(); i != cards.end(); ++i)
       {
       // Methos of the pointer i 
-      msg=msg+x;
       x=(*i)->print();
+      msg=msg+x;
       }
     return msg;
 }
@@ -111,6 +112,16 @@ std::string Manage::printCards(std::vector<Card*> &cards){
     for (int i=0;i<cards.size();i++){
     int j=i;
       while (j>0 && cards[j]->getName()<cards[j-1]->getName()){
+        swap(j,j-1,cards);
+        j=j-1;
+      }
+    }
+  }
+
+  void Manage::sortById(std::vector<Card*> &cards){
+    for (int i=0;i<cards.size();i++){
+    int j=i;
+      while (j>0 && cards[j]->getID()<cards[j-1]->getID()){
         swap(j,j-1,cards);
         j=j-1;
       }
