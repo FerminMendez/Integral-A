@@ -12,21 +12,14 @@ Incluí una clase llamada Manage para facilitar los procesos de lectura, escritu
 
 Uso un stack para crear el mazo de cartas donde solo nos importa ir sacando el elemento de más arriba como si fuera el juego real.
 
-//INCLUIR DONDE SE PONE EL STACK
-
-
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
 
 Considerando que el mazo consta de 66 cartas podemos decidir que se trata de un arreglo pequeño, por lo que el tiempo de ejecución no será una gran diferencia entre un algoritmo y otro. 
 Por esta razón opté por implementar algo que no ocupe mucha memoria y sea fácil de implementar. Un insertion sort.
 
-//INCLUIR DONDE SE PONE EL STACK
-
 ### Usa un árbol adecuado para resolver un problema
 
 Usé un BST para ordenar las cartas registradas por ID. Como vamos a desordenar las cartas, es poco probable que se el BST se deforme. 
-
-//INCLUIR DONDE SE PONE BST
 
 ## SICT0301B: Evalúa los componentes
 
