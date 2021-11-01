@@ -30,12 +30,6 @@ class Node{
         void inorder(std::stringstream&) const;
         void postorder(std::stringstream&) const;
         void levelbylevel(std::stringstream*);
-        //height
-        int height(int);
-        //ancestors
-        void ancestors(std::stringstream&,int) const;
-        //FindLevel
-        int findlevel(T, int);
 
         void getCards(std::vector<T*>&);
 
@@ -163,61 +157,6 @@ void Node<T>::levelbylevel(std::stringstream *ptr){
     }
 
 }
-// Height
-
-template<class T>
-int Node<T>::height(int prev){
-    int le,ri;
-    if(left==0 && right==0){
-        return prev;
-    }
-    else if(left==0){
-        return right->height(prev+1);
-    }
-    else if(right==0){
-        return left->height(prev+1);
-    }
-    else{
-        le=left->height(prev+1);
-        ri=right->height(prev+1);
-        if(le>=ri){return le;}
-        else{return ri;}
-    }
-
-}
-
-// Ancestors
-template <class T>
-void Node<T>::ancestors(std::stringstream &aux, int val) const{
-    if(value==val){
-        return;
-    }
-    if (aux.tellp() != 1) {
-	    aux << " ";
-	}
-    aux<<value;
-    if(val>value){
-        right->ancestors(aux,val);
-    }
-    else if(val<value){
-        left->ancestors(aux,val);
-    }
-
-}
-//Find level
-template <class T>
-int Node<T>::findlevel(T val,int prev){
-    if(val==value){
-        return prev+1;
-    }
-    else if(val>value){
-        return right->findlevel(val,prev+1);
-    }
-    else if(val<value){
-        return left->findlevel(val,prev+1);
-    }
-    return -1;
-}
 
 template <class T>
  void Node<T>::getCards(std::vector<T*> &aux){
@@ -327,27 +266,6 @@ std::string BST<T>::visit(){
     return preorder()+"\n"+inorder()+"\n"+postorder()+"\n"+levelbylevel();
 }
 
-//Height
-template <class T>
-int BST<T>::height(){
-    if(is_empty()){
-        return 0;
-    }
-    else{
-        return root->height(1);
-    }
-}
-
-template <class T>
-std::string BST<T>::ancestors(T val){
-    std::stringstream aux;
-    aux<<"[";
-    if(!is_empty() && find(val)){
-        root->ancestors(aux,val);
-    }
-    aux<<"]";
-    return aux.str();
-}
 
 template <class T>
 T BST<T>::whatlevelamI(T val){

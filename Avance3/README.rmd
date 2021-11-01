@@ -68,7 +68,10 @@ Es claro que si se sacan los n elementos la complejidad es O(n)
 -Vaciar:Vacia la lista y despliega el todos los elemntos que contenia
 
 Funciones BST:
--
+Este BST está implementado por ordenamiento de menor a mayo respecto a los ID ya que con esto nos permite tener un valor único para cada carta.
+Para imprimir el arbol en cualquiera de los casos tenemos una complejidad de O(n) ya que hay que pasar por todos los nodos
+-Add:Añade una carta al arbol. Complejidad O(logn) en la mayoria de los casos. Puede ser O(n) si está degenerado como linked list.
+
 
 
 
