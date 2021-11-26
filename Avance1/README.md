@@ -23,3 +23,8 @@ Implementa mecanismos de lectura de archivos correctos y útiles dentro de un pr
 En este caso los datos se recuperan directamente desde un archivo csv.
 
 
+################################
+COREECCIÓN
+
+No compilaba. Ahora sí :)
+El Stack funciona y los casos de ejemplo tambien.
