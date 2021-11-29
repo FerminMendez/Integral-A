@@ -1,0 +1,5 @@
+### Act Integral A avance 2 estructuras lineales
+ El stack.h no compilaba. Se corrigió el código e implementaros casos de ejemplo que muestran el funcionamiento correcto del stack
+ 
+ Competencia corregida
+ SIC302B:Selecciona y usa una estructura lineal adecuada al problema
