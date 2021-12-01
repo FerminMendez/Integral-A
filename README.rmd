@@ -81,7 +81,6 @@ Para imprimir el arbol en cualquiera de los casos tenemos una complejidad de O(n
 
 El programa permite añadir cartas
 El programa permite ver el orden de las cartas, ordenarlas y desordenarlas
-El programa permite obtener medidas de gramaje del árbol (opción 5 en el menú)
 
 ### Implementa mecanismos de lectura de archivos correctos y útiles dentro de un programa. Usar de manera
 Las cartas estan registradas en un csv, desde la clase manage se puede leer y obtener como un vector que podemos utilizar para llamar el stack y BST por separado para poder compararlos.
