@@ -51,8 +51,11 @@ Funciones Manage:
 Las siguientes funciones dependen directamente del numero de datos dados en el csv o bien el vector que reciben, por lo que tienen complejidad O(n)
 -getCards:Regresa un vector de punteros hacia las n cartas registradas en el csv
 -printCards: Imprime las cartas que contiene
--shuffle:Recorre los n espacios del vector y aplica n swaps;
--save:sobreEscribe el csv con los valores del vector;
+-shuffle:Recorre los n espacios del vector y aplica n swaps
+-save:sobreEscribe el csv con los valores del vector
+
+-restoreCSV: utiliza getcards y save. El archivo en el que se trabaja se devuelve a su estado original complejidad O(2n)
+
 Finalmente tenemos los algoritmos de ordenamieno por Costo, Id y nombre. Al estar implementados con insertion sort por ser un pequeño numero de cartas. Tenemos que sus compleidades son de O(n^2)
 -sortByCost
 -sortByName
@@ -64,6 +67,7 @@ Las primeras dos funciones son O(1) debido a que solo acceden al último element
 -Pop:Quita el primer elemento de la lista
 Es claro que si se sacan los n elementos la complejidad es O(n)
 -Vaciar:Vacia la lista y despliega el todos los elemntos que contenia
+-Empty:Comprueba que size no sea 0
 
 Funciones BST:
 Este BST está implementado por ordenamiento de menor a mayo respecto a los ID ya que con esto nos permite tener un valor único para cada carta.
