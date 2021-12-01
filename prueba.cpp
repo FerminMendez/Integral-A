@@ -166,7 +166,6 @@ int main(int argc, char* argv[]) {
   cout << "\n" <<"26.- esperada " << ans << "\n programa " << tree.print() << "\n";
   cout <<	(!ans.compare(tree.print()) ? "success\n" : "fail\n");
 
-
   cout<<"Para comprobar las funciones shuffle y save, las correremos juntas al final y esto resultará en un cambio de orden en todas las cartas que se reflejará en el csv cada vez que se corran estos casos de prueba \n";
   m.shuffle(cards);
   m.save(cards);
