@@ -22,7 +22,7 @@ Uso un stack para crear el mazo de cartas donde solo nos importa ir sacando el e
 
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
 
-Considerando que el mazo consta de 66 cartas podemos decidir que se trata de un arreglo pequeño, por lo que el tiempo de ejecución no será una gran diferencia entre un algoritmo y otro. 
+Considerando que el mazo consta de 24 cartas podemos decidir que se trata de un arreglo pequeño, por lo que el tiempo de ejecución no será una gran diferencia entre un algoritmo y otro. 
 Por esta razón opté por implementar algo que no ocupe mucha memoria y sea fácil de implementar. Un insertion sort.
 
 ### Usa un árbol adecuado para resolver un problema
@@ -33,7 +33,7 @@ Usé un BST para ordenar las cartas registradas por ID. Como vamos a desordenar 
 
 ### Presenta Casos de Prueba correctos y completos para todas las funciones y procedimientos del programa,
 
-los casos de pruebas para todas las funciones se encuentran PruebasDeLasFunciones.cpp donde se prueban las funciones de: 
+los casos de pruebas para todas las funciones se encuentran prueba.cpp donde se prueban las funciones de: 
 
 Lectura, escritura, desorden y ordenamiento desde la clase Manage
 
